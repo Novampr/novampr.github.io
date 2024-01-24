@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet"> 
+        <style>
+            * {
+                color: white;
+            }
+            html {
+                height: 100%;
+            }
+            body {
+                height: 100%;
+                margin: 0;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background: linear-gradient(135deg, rgba(0,36,36,1) 0%, rgba(121,9,121,1) 35%, rgba(6,132,134,1) 100%);
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 5%;
+                justify-items: center;
+                align-items: center;
+            }
+            h1 {
+                margin-top: 300px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 900;
+                font-size: 4rem;
+                text-shadow: 0 4px 16px rgba(255, 255, 255, 0.2), 0 6px 20px rgba(255, 255, 255, 0.2);
+            }
+            #search-hold {
+                margin-top: 300px;
+                width: 50%;
+                height: 60px;
+                box-shadow: 0 4px 16px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+            }
+            #search {
+                background-color: black;
+                border: 1px white solid;
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+                font-size: larger;
+            }
+            #icon-holder {
+                display: flex;
+                margin-bottom: 300px;
+            }
+            .icon {
+                display: grid;
+                margin-left: 5px;
+                margin-right: 5px;
+                grid-template-columns: 100%;
+                width: 80px;
+                height: 140px;
+                background-color: rgba(0, 0, 0, 0.36);
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color .2s ease-in-out;
+            }
+            .icon:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .icon > * {
+                margin: auto;
+                margin-top: 15px;
+            }
+            .icon > img {
+                border-radius: 50%;
+            }
+            p {
+                text-decoration: none !important; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Browse</h1>
+        <div id="search-hold">
+            <input id="search" type="text" placeholder="Type here...">
+        </div>
+        <div id="icon-holder">
+            <a class="icon" href="https://github.com/">
+                <img src="https://github.com/fluidicon.png" width="50" height="50">
+                <p style="text-decoration: none;">Github</p>
+            </a>
+            <a class="icon" href="https://pixlr.com/e/">
+                <img src="https://pixlr.com/img/general/e-icon.svg" width="50" height="50">
+                <p style="text-decoration: none;">Pixlr</p>
+            </a>
+            <a class="icon" href="https://youtube.com/">
+                <img src="https://www.youtube.com/s/desktop/54055272/img/favicon_96x96.png" width="50" height="50" style="border-radius: 0;">
+                <p style="text-decoration: none;">Youtube</p>
+            </a>
+        </div>
+        <script>
+            function doMySearch(input) {
+                window.location.href = encodeURI("https://www.google.com/search?q="+input.replace(" ", "+"))
+            }
+
+            document.getElementById("search").addEventListener("keyup", e => {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    doMySearch(document.getElementById("search").value)
+                }
+            })
+        </script>
+    </body>
+</html>
