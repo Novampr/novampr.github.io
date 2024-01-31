@@ -226,7 +226,7 @@ pre {
 
 
 .width {
-  width: calc(calc(#{$content-width} - (#{$spacing-unit})) + 5%);
+  max-width: 800px;
 }
 
 /**
