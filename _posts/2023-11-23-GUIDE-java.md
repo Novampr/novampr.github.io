@@ -240,4 +240,184 @@ public class Main {
 
 Now if the `myVariable` is not an empty string it will print "myVariable contains data!"
 
-For now that's the end of the guide, I'll add to this more and more as time passes, enjoy Java!
+Let's go over some java data types:
+#### String
+Contains a set of characters, usually unicode, the string has no primitive type
+```java
+public static String myStr = "abc...ABC...123?!";
+```
+
+#### Integer/Long
+Contains a number with no decimal points (Longs can have a higher number than ints but are almost identical)
+```java
+public static Integer/*Wrapper class for the prim type int*/ myInt = 5;
+public static int/*Primitive type*/ mySecondInt = 3;
+public static Long/*Wrapper class for the prim type long*/ myLong = 5L; // Add an L to create a long
+public static long/*Primitive type*/ mySecondLong = (long) 3; // Cast to create a long
+```
+
+#### Float/Double
+Contains a number with decimal points (Doubles can have a higher number than floats but are almost identical)
+```java
+public static Float/*Wrapper class for the prim type int*/ myFloat = 5.0F; // Add an F to create a float
+public static float/*Primitive type*/ mySecondFloat = (float) 3; // Cast to create a float
+public static Double/*Wrapper class for the prim type long*/ myDouble = 5D; // Add a D to create a long
+public static double/*Primitive type*/ mySecondDouble = (double) 3; // Cast to create a double
+```
+
+#### Boolean
+`true` or `false`
+```java
+public static Boolean myBool = true;
+public static boolean mySecondBool = false;
+```
+
+#### Character
+One character, like a string but only one
+```java
+public static char myChar = 'D'; // '' means a character, cannot be used to create a string
+```
+
+You may have noticed the funny little brackets there
+```java
+public static long/*Primitive type*/ mySecondLong = (long) 3; // Cast to create a long
+```
+That's called casting, going from one type to another (In this case an int to a long)
+
+It's not so simple, you can't do this
+```java
+public static long myLong = (long) true;
+```
+It won't run, it just can't
+
+### Classes in detail
+Ok so we've already tried using classes, but what if we have an application which takes in an input of a class, how can we make sure this class has the right methods... and how do we put in a type parameter for our function? We can't do this
+```java
+public static void doSomething(myThing) {
+    if (myThing.hasMethods("myMethod", "mySecondMethod")) {
+        //...
+    }
+}
+```
+That wouldn't work, we need a type definition and we can't check for methods like that, we could do this
+```java
+public static void doSomething(Object myThing) {
+    try {
+        Method m = myThing.class.getDeclardedMethod("myMethod");
+        //Has method but now you have to get an instance and run it was raw parameters, yuck.
+    } catch (NoMethodException/*Example exception, not real*/ e) {
+        //Doesn't have method
+    }
+}
+```
+But that's complex and not needed
+```java
+public static void doSomething(MyThing myThing) {
+    myThing.myMethod();
+}
+```
+That's much easier but what does this mean? Surely now we can only accept a `MyThing` instance? Nope! Let's look at this "class"
+```java
+public interface MyThing {
+    void myMethod();
+}
+```
+Ok that's cool and all, but it won't do anything, let's look at the input shall we?
+```java
+public class Main {
+    static class ImplMyThing implements MyThing {
+        public void myMethod() {
+            System.out.println("myMethod called!");
+        }
+    }
+
+    public static void main(String[] args) {
+        doSomething(new ImplMyThing());
+    }
+
+    public static void doSomething(MyThing mything) {
+        myThing.myMethod();
+    }
+}
+```
+But wait that won't compile! Yes it will actually.
+
+Let's say we had a family tree
+
+John has the child Jim
+
+If you checked if John had "John DNA" you would get the answer "yes", if you checked if Jim had "John JDA", the answer would be yes!
+
+Because ImplMyThing `implements` MyThing, it inherits all methods which means it can be passed into an argument even if it's not MyThing
+
+In the background all Java is doing, it's casting ImplMyThing to MyThing!
+
+So now we know classes can implement interfaces, that's great and useful.
+
+What if you want to, I don't know, `extend` a class and add your own functions and maybe even `Override` some of the original class's functions?
+
+Well check this out.
+```java
+public class Main {
+    public static void main(String[] args) {
+        MyClass2 mc2 = new MyClass2();
+        mc2.doSomething();
+        mc2.doSomething2();
+    }
+
+    static class MyClass1 {
+        public void doSomething() {
+            System.out.println("Did something!");
+        }
+    }
+
+    static class MyClass2 extends MyClass1 {
+        @Override
+        public void doSomething() {
+            System.out.println("Did something in MyClass2!");
+        }
+
+        public void doSomething2() {
+            System.out.println("Did the second thing :)");
+        }
+    }
+}
+```
+The same thing that applies to interfaces applies to classes extending each other, but there is a catch.
+
+Let's say we pass MyClass2 into a function that wants MyClass1.
+```java
+public class Main {
+    public static void main(String[] args) {
+        MyClass2 mc2 = new MyClass2();
+        mc2.doSomething();
+        mc2.doSomething2();
+        handleMyClass(mc2);
+    }
+
+    static class MyClass1 {
+        public void doSomething() {
+            System.out.println("Did something!");
+        }
+    }
+
+    static class MyClass2 extends MyClass1 {
+        @Override
+        public void doSomething() {
+            System.out.println("Did something in MyClass2!");
+        }
+
+        public void doSomething2() {
+            System.out.println("Did the second thing :)");
+        }
+    }
+
+    public static void handleMyClass(MyClass1 mc1) {
+        mc1.doSomething();
+    }
+}
+```
+
+Now that we "transformed" `MyClass2` into `MyClass1`, the java runtime sees it as a `MyClass1` which means we can't use `doSomething2()` as that is not apart of `MyClass1`, it doesn't believe it exists, however if we use `@Override` to override a method, we can modify it and it will run changed even if we "transform" `MyClass2` into `MyClass1`, the result from running `handleMyClass` in the example above would output `DId something in MyClass2!`
+
+Now you are doing pretty good at java! Remember this is just a beginners guide and doesn't get into anything too advanced, just wait for the PaperAPI and FabricAPI guides, those will get into some detail. Enjoy javaing.
