@@ -6,10 +6,14 @@ permalink: /about/me/
 
 <img src="/images/pfps/me.png" alt="PFP" style="border-radius: 50%;" width="100" height="100">
 
-<span style="font-size: 2rem;">Hey there! I'm Novampr or as you probably know me, Nova or maybe even Amp. I'm a 15 year old with hopes and dreams and honestly don't know my own gender at this point, I love doing development stuff, I basically work at the Bones Network and am developing a piece of software called 'Framework' which has a GUI called 'Serenade'. I am an autistic goober and probably have ADHD.</span>
+<span style="font-size: 1.5rem;">Hey there!</span>
 
-<span style="font-size: 2rem;">Please buy me programmer socks 🥺</span>
+```java
+public String name = "Nova";
+```
+
+<span style="font-size: 1.5rem;">But you can call me Amp, I'm just a silly person who makes some code. Example: <a href="https://github.com/CCSKore/Pronouns">the Pronouns plugin/mod</a>, it's cool check it out :3 | Guess I should provide more information because why not, aged 15 with a confused gender and a beautiful partner Nico <3</span>
 
 <hr>
 
-<span style="font-size: 2rem;">I recommend checking out <a href="/guide/java-guide">this guide</a> to become an epic java developer :3</span>
+<span style="font-size: 1rem;">I recommend checking out <a href="/guide/java-guide">this guide</a> to become an epic java developer :3</span>
