@@ -12,7 +12,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/rippedOffGradient.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -53,3 +53,23 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Pride -->
+<script>
+    for (const element of document.getElementsByClassName("prideTxt")) {
+        var myText = element.innerHTML,
+            wrapText = "";
+
+        for (var i = 0; i < myText.length; i++) {
+            const char = myText.charAt(i);
+
+            if (char === " ") {
+                wrapText += '<em style="animation-delay: ' + (i * 0.1) + 's;" class="space pride-' + (element as HTMLElement).dataset.flag + '">' + myText.charAt(i) + "</em>";
+            } else {
+                wrapText += '<em style="animation-delay: ' + (i * 0.1) + 's;" class="pride-' + (element as HTMLElement).dataset.flag + '">' + myText.charAt(i) + "</em>";
+            }
+        }
+
+        element.innerHTML = wrapText;
+    }
+</script>

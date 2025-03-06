@@ -1,0 +1,24 @@
+---
+
+---
+
+<span class="bounceTxt"><slot /></span>
+
+<script>
+    for (const element of document.getElementsByClassName("bounceTxt")) {
+        var myText = element.innerHTML,
+            wrapText = "";
+
+        for (var i = 0; i < myText.length; i++) {
+            const char = myText.charAt(i);
+
+            if (char === " ") {
+                wrapText += '<em class="space bounce-me" style="animation-delay: ' + (i * 0.1) + 's;">' + myText.charAt(i) + "</em>";
+            } else {
+                wrapText += '<em class="bounce-me" style="animation-delay: ' + (i * 0.1) + 's;">' + myText.charAt(i) + "</em>";
+            }
+        }
+
+        element.innerHTML = wrapText;
+    }
+</script>
