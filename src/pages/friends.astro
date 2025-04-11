@@ -6,23 +6,26 @@ import Layout from '../layouts/BlogPost.astro';
 <Layout
 	title="My Friends"
 	description="These people... strange..."
-	pubDate={new Date('March 06 2025')}
 >
 	<p>
 		These are my (strange) friends! Some of them will actually have links but some won't, some won't be here too.
 	</p>
 
-    <div class="friend-card">
-        <img src="/friends/theo.png" />
+    <h2>Partner &#60;3</h2>
+
+    <div class="friend-card friend-loved">
+        <img src="/friends/alex.png" alt="Alex's profile picture" />
         <p>
-            Theo - (Ask/Pronouns)<br />
+            Alex - (Ask/Pronouns)<br />
             - <Pride flag="bi">Bisexual</Pride><br />
             - <Pride flag="genderfluid">Genderfluid</Pride><br />
         </p>
-    </div>
+    </div><br />
 
-    <div class="friend-card">
-        <img src="/friends/computercat.png" />
+    <h2>Friends</h2>
+
+    <div class="friend-card friend-linked" title="Computer Cat's GitHub" onclick="location.href='https://github.com/computer-catt';">
+        <img src="/friends/computercat.png" alt="Computer Cat's profile picture" />
         <p>
             Computer Cat - (They/Them)<br />
             - <Pride flag="pan">Pansexual</Pride><br />
@@ -31,16 +34,16 @@ import Layout from '../layouts/BlogPost.astro';
     </div>
 
 	<div class="friend-card">
-        <img src="/friends/darkglitch.png" />
+        <img src="/friends/darkglitch.png" alt="Dark Gl1tch's profile picture" />
         <p>
-            Dark_Gl1tch - (He/Him)<br />
+            Dark Gl1tch - (He/Him)<br />
             - <Pride flag="straight">Straight</Pride><br />
             - <Pride flag="cisgender">Cisgender</Pride><br />
         </p>
     </div>
 
     <div class="friend-card">
-        <img src="/friends/slimedude.png" />
+        <img src="/friends/slimedude.png" alt="Slime Dude's profile picture" />
         <p>
             Slime Dude - (He/Him)<br />
             - <Pride flag="straight">Straight</Pride><br />
@@ -49,7 +52,7 @@ import Layout from '../layouts/BlogPost.astro';
     </div>
 
     <div class="friend-card">
-        <img src="/friends/techno.png" />
+        <img src="/friends/techno.png" alt="Techno's profile picture" />
         <p>
             Techno - (He/Him)<br />
             - <Pride flag="straight">Straight</Pride><br />
@@ -58,7 +61,7 @@ import Layout from '../layouts/BlogPost.astro';
     </div>
 
     <div class="friend-card">
-        <img src="/friends/lunaeclipse.png" />
+        <img src="/friends/lunaeclipse.png" alt="Luna Ecl1ps3's profile picture" />
         <p>
             Luna Ecl1ps3 - (He/Him)<br />
             - <Pride flag="straight">Straight</Pride><br />

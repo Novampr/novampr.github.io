@@ -48,6 +48,7 @@ body {
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
+	min-height: 60vh;
 	margin: auto;
 	padding: 3em 1em;
 }
@@ -361,16 +362,36 @@ hr {
 	border-radius: 6px;
 
 	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-columns: 2fr 4fr 4fr;
+	grid-template-columns: 94px 0.2fr 4fr;
 
 	height: 94px;
 
 	margin-bottom: 10px;
+
+	transform: scale(1);
+
+	transition: transform 0.2s ease-in-out;
+}
+
+.friend-card.friend-linked:hover {
+	transform: scale(1.05);
+
+	cursor: pointer;
+}
+
+.friend-linked {
+	background-color: rgba(20, 20, 50, 0.2);
+}
+
+.friend-loved {
+	background: linear-gradient(90deg,rgba(224, 56, 56, 0.2) 0%, rgba(194, 37, 136, 0.2) 100%);
 }
 
 .friend-card img {
 	width: 94px;
 	height: 94px;
+
+	aspect-ratio: 1 / 1;
 
 	border-radius: 6px;
 
@@ -386,5 +407,5 @@ hr {
 	grid-row-start: 1;
 	grid-row-end: 3;
 
-	grid-column: 2;
+	grid-column: 3;
 }
