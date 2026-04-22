@@ -17,7 +17,7 @@
 	--box-shadow: 0 2px 6px rgba(var(--gray-light), 25%), 0 8px 24px rgba(var(--gray-light), 33%),
 		0 16px 32px rgba(var(--gray-light), 33%);
 
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background-color: #232a39;
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -44,6 +44,7 @@ body {
 	color: rgb(var(--gray-light));
 	font-size: 20px;
 	line-height: 1.7;
+	background: linear-gradient(#4a505d, #3e4452);
 }
 main {
 	width: 720px;
@@ -107,6 +108,9 @@ p em.space {
 
 .prose p {
 	margin-bottom: 2em;
+}
+p.close {
+	margin-bottom: 0.25em;
 }
 textarea {
 	width: 100%;
@@ -305,6 +309,35 @@ hr {
 	animation: bigradient 4s ease-in infinite alternate;
 }
 
+@keyframes bigendergradient {
+	0% {
+		color: #c479a2;
+		transform: translateY(-1px) translateX(-1px);
+	}
+	25% {
+		color: #d5c7e8;
+		transform: translateY(1px);
+	}
+	50% {
+		color: #ffffff;
+		transform: translateY(-1px) translateX(1px);
+	}
+	75% {
+		color: #d5c7e8;
+		transform: translateY(1px);
+	}
+	100% {
+		color: #6d82d1;
+		transform: translateY(-1px) translateX(-1px);
+	}
+}
+
+.pride-bigender {
+	color: #c479a2;
+	transform: translateY(-1px);
+	animation: bigendergradient 4s ease-in infinite alternate;
+}
+
 @keyframes genderfluidgradient {
 	0% {
 		color: #ff75a0;
@@ -354,8 +387,11 @@ hr {
 	animation: straightgradient 3s linear infinite alternate;
 }
 
-.friend-card {
+.img-card {
 	display: grid;
+
+	color: rgb(var(--white));
+	text-decoration: none;
 
 	background-color: rgba(0, 0, 0, 0.2);
 
@@ -373,23 +409,31 @@ hr {
 	transition: transform 0.2s ease-in-out;
 }
 
-.friend-card.friend-linked:hover {
+.img-card:hover {
+	color: rgb(var(--white));
+}
+
+.img-card.img-linked:hover {
 	transform: scale(1.05);
 
 	cursor: pointer;
 }
 
-.friend-linked {
+.img-linked {
 	background-color: rgba(20, 20, 50, 0.2);
 }
 
-.friend-loved {
+.img-loved {
 	background: linear-gradient(90deg,rgba(224, 56, 56, 0.2) 0%, rgba(194, 37, 136, 0.2) 100%);
 }
 
-.friend-card img {
-	width: 94px;
-	height: 94px;
+.img-card img {
+	width: 84px;
+	height: 84px;
+
+	margin-left: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 
 	aspect-ratio: 1 / 1;
 
@@ -399,7 +443,7 @@ hr {
 	grid-row-end: 3;
 }
 
-.friend-card p {
+.img-card p {
 	margin-top: 0;
 
 	line-height: 30px;
@@ -411,9 +455,13 @@ hr {
 }
 
 .space-gradient {
-	background-image: linear-gradient(90deg, #ff00ff, #00ffff);
+	background-image: linear-gradient(90deg, #ffffff, #000000);
     color: transparent;
     background-clip: text;
+}
+
+.space-gradient[data-color="neon"] {
+	background-image: linear-gradient(90deg, #ff00ff, #00ffff);
 }
 
 .space-glow {

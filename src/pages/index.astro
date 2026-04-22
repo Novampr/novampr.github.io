@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { MY_NAME, SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import E from '../components/E.astro';
 import S from '../components/S.astro';
 import NameText from '../components/NameText.astro';
@@ -16,7 +16,7 @@ import NameText from '../components/NameText.astro';
 	<body>
 		<Header />
 		<main>
-			<h1>Hey! I'm <NameText>Aurora</NameText>!</h1>
+			<h1>Hey! I'm <NameText color="neon">{MY_NAME}</NameText>!</h1>
 			<p>
 				Welcome to my little patch of the <E>World Wide Web!</E>
 			</p>
@@ -24,15 +24,13 @@ import NameText from '../components/NameText.astro';
 				If you aren't familar with Java, I recommend escaping now while you can :3
 			</p>
 			<p>
-				Anyway, this place is basically my yapping room and guide center, I'll have basic guides and advanced ones, when I get to actually
-				doing them. <S>If I ever do.</S>
+				Anyway, this place is basically my informal resume, which is kinda weird but, we roll with it, and hey! I'll add more soon!
+				<S>If I ever do.</S>
 			</p>
 
-			<p>You're probably looking for more content on the home, I got nothing, so don't expect more around the site, it's fairly new...</p>
+			<p>You're probably looking for more content on the home, I got nothing, so don't expect more around the site, it's fairly new... nevermind it's been a year...</p>
 
-			<p>I'm gonna be honest. This text is just filler text at this point, if the page is too short, styling kinda stops working. No clue why.</p>
-
-			<p>Yep... you're wasting your time. Go visit a blog or something.</p>
+			<p>Yep... you're wasting your time. Go visit <a href="https://geysermc.org/">GeyserMC</a> or something.</p>
 		</main>
 		<Footer />
 	</body>

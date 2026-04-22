@@ -1,3 +1,4 @@
 ---
+const { color } = Astro.props;
 ---
-<span class="space-gradient space-glow"><slot /></span>
+<span data-color={color} class="space-gradient space-glow"><slot /></span>

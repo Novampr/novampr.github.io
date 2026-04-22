@@ -1,25 +1,54 @@
 ---
-import Pride from '../components/Pride.astro';
-import Layout from '../layouts/BlogPost.astro';
+import Pride from "../components/Pride.astro";
+import Layout from "../layouts/Base.astro";
+import { MY_NAME } from '../consts';
+import NameText from "../components/NameText.astro";
 ---
 
 <Layout
 	title="About Me"
 	description="TLDR: Silly goober"
-	pubDate={new Date('March 01 2025')}
-	updatedDate={new Date('July 16 2025')}
-	heroImage="/me.png"
 >
-	<p>
-		Hey there! My name is Nova, but you probably know me as Aurora, that being my online name and all.
-		I'm just a silly gal living life :3
-	</p>
+	<p>Hey there! My name is <NameText color="neon">{MY_NAME}</NameText>! I'm just a silly gal living life :3</p>
+
+	<p class="close">Here's some projects I work on:</p>
+
+	<a
+		class="img-card img-linked"
+		title="CubeCraft Website"
+		href="https://cubecraft.net"
+	>
+		<img
+			src="https://forums.cubecraftcdn.com/xenforo/serve/styles/cubecraft/cubecraft/cube-512x512.png"
+			alt="CubeCraft Logo"
+		/>
+		<p>
+			CubeCraft<br />
+			- Protocol Developer<br />
+			- A Minecraft network for both Java and Bedrock
+		</p>
+	</a>
+
+	<a
+		class="img-card img-linked"
+		title="GeyserMC Website"
+		href="https://geysermc.org"
+	>
+		<img
+			src="https://geysermc.org/img/android-chrome-512x512.png"
+			alt="GeyserMC Logo"
+		/>
+		<p>
+			GeyserMC<br />
+			- Developer<br />
+			- A bridge between Minecraft Java/Bedrock
+		</p>
+	</a>
 
 	<p>
 		Here's some things about me:<br />
-		-  Age: 17<br />
-		-  DOB: 05/06/2008 (Nag me if the age is wrong)<br />
-		-  Gender: <Pride flag="trans">Female</Pride><br />
-		-  Sexuality: <Pride flag="pan">Pansexual</Pride>
+		- DOB: 05/06/2008<br />
+		- Gender: <Pride flag="trans">Female</Pride><br />
+		- Sexuality: <Pride flag="pan">Pansexual</Pride>
 	</p>
 </Layout>

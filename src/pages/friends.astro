@@ -1,6 +1,6 @@
 ---
 import Pride from '../components/Pride.astro';
-import Layout from '../layouts/BlogPost.astro';
+import Layout from '../layouts/Base.astro';
 ---
 
 <Layout
@@ -13,18 +13,27 @@ import Layout from '../layouts/BlogPost.astro';
 
     <h2>Partner &#60;3</h2>
 
-    <div class="friend-card friend-loved">
-        <img src="/friends/alex.png" alt="Alex's profile picture" />
+    <div class="img-card img-loved">
+        <img src="/friends/dae.png" alt="Dae's profile picture" />
         <p>
-            Alex - (Ask/Pronouns)<br />
+            Dae - (She/He)<br />
             - <Pride flag="bi">Bisexual</Pride><br />
-            - <Pride flag="genderfluid">Genderfluid</Pride><br />
+            - <Pride flag="bigender">Bigender</Pride><br />
         </p>
     </div><br />
 
     <h2>Friends</h2>
 
-    <div class="friend-card friend-linked" title="Computer Cat's GitHub" onclick="location.href='https://github.com/computer-catt';">
+    <div class="img-card img-linked" title="Zomka's Site" onclick="location.href='https://zomka.dev';">
+        <img src="/friends/zomka.webp" alt="Zomka's profile picture" />
+        <p>
+            Zomka - (She/They)<br />
+            - <Pride flag="pan">Pansexual</Pride><br />
+            - <Pride flag="trans">Transgender</Pride><br />
+        </p>
+    </div>
+
+    <div class="img-card img-linked" title="Computer Cat's GitHub" onclick="location.href='https://github.com/computer-catt';">
         <img src="/friends/computercat.png" alt="Computer Cat's profile picture" />
         <p>
             Computer Cat - (They/Them)<br />
@@ -33,7 +42,7 @@ import Layout from '../layouts/BlogPost.astro';
         </p>
     </div>
 
-	<div class="friend-card">
+	<div class="img-card">
         <img src="/friends/darkglitch.png" alt="Dark Gl1tch's profile picture" />
         <p>
             Dark Gl1tch - (He/Him)<br />
@@ -42,7 +51,7 @@ import Layout from '../layouts/BlogPost.astro';
         </p>
     </div>
 
-    <div class="friend-card">
+    <div class="img-card">
         <img src="/friends/slimedude.png" alt="Slime Dude's profile picture" />
         <p>
             Slime Dude - (He/Him)<br />
@@ -51,7 +60,7 @@ import Layout from '../layouts/BlogPost.astro';
         </p>
     </div>
 
-    <div class="friend-card">
+    <div class="img-card">
         <img src="/friends/techno.png" alt="Techno's profile picture" />
         <p>
             Techno - (He/Him)<br />
@@ -60,7 +69,7 @@ import Layout from '../layouts/BlogPost.astro';
         </p>
     </div>
 
-    <div class="friend-card">
+    <div class="img-card">
         <img src="/friends/lunaeclipse.png" alt="Luna Ecl1ps3's profile picture" />
         <p>
             Luna Ecl1ps3 - (He/Him)<br />
