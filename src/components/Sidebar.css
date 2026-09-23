@@ -17,6 +17,7 @@
   z-index: 0;
   padding: 0 var(--sidebar-bg-padding);
   box-sizing: border-box;
+  height: 100%;
 }
 
 .site-sidebar-overlay {
@@ -95,6 +96,6 @@
   .site-sidebar {
     width: 100%;
     height: auto;
-    position: static;
+    position: relative;
   }
 }
