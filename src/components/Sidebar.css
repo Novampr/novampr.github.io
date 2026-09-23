@@ -69,6 +69,7 @@
   transition: opacity 0.15s ease, border-width 0.1s ease;
   border-bottom: 0 white solid;
   flex-grow: 0;
+  padding: 0;
 }
 
 .site-sidebar-nav-item:hover {
@@ -97,5 +98,23 @@
     width: 100%;
     height: auto;
     position: relative;
+  }
+
+  .site-sidebar-nav {
+    flex-direction: row;
+  }
+
+  .site-sidebar-nav-top-item {
+    flex: 1;
+    text-align: center;
+    padding: .5rem;
+  }
+
+  .site-sidebar-bottom {
+    flex-direction: row;
+  }
+
+  .site-sidebar-copyright {
+    margin-left: auto;
   }
 }

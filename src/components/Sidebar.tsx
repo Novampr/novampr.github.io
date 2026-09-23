@@ -85,7 +85,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 to={item.to}
                 end={item.to === '/'}
                 className={({ isActive }) =>
-                  `site-sidebar-nav-item${isActive ? ' site-sidebar-nav-item-active' : ''}`
+                  `site-sidebar-nav-top-item site-sidebar-nav-item${isActive ? ' site-sidebar-nav-item-active' : ''}`
                 }
               >
                 {item.label}

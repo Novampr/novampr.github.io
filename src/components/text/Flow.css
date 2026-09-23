@@ -1,10 +1,10 @@
-.flow-text {
+.wave {
     display: inline-block;
-    animation: flow 1s ease-in-out;
+    animation: wave 1s ease-in-out;
     animation-iteration-count: infinite;
 }
 
-@keyframes flow {
+@keyframes wave {
     0% {
         transform: translate(0, -3px);
     }

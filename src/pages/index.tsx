@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       <h1>Auri Net v3</h1>
-      <p>Welcome! Welcome! God we've rewritten this <Flow text='TWICE' /> now!</p>
+      <p>Welcome! Welcome! God we've rewritten this <Flow text='TWICE' types={["wave"]} /> now!</p>
 
       <p>Each time I can and will improve the site... I hope so anyway.</p>
 
