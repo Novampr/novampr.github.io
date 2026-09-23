@@ -14,7 +14,7 @@ const headerNavItems = [
 ];
 
 const footerLinks = [
-  { icon: 'https://github.githubassets.com/favicons/favicon-dark.png', href: 'https://github.com' },
+  { icon: 'https://github.githubassets.com/favicons/favicon-dark.png', href: 'https://github.com/Novampr' },
   { icon: discordLogo, href: 'https://discord.gg/hadcHUfaSk' },
   { icon: youtubeLogo, href: 'https://www.youtube.com/@auriiu' },
 ];
