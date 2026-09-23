@@ -1,0 +1,19 @@
+.flow-text {
+    display: inline-block;
+    animation: flow 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flow {
+    0% {
+        transform: translate(0, -3px);
+    }
+
+    50% {
+        transform: translate(0, 3px);
+    }
+
+    100% {
+        transform: translate(0, -3px);
+    }
+}

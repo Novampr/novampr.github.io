@@ -1,0 +1,19 @@
+.site-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.site-main {
+  flex: 1;
+  padding: 2rem;
+  color: var(--text);
+  display: flex;
+}
+
+@media only screen and (max-width: 600px)  {
+  .site-layout {
+    flex-direction: column;
+  }
+}

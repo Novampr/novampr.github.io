@@ -1,0 +1,8 @@
+.page-transition {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.page-transition--visible {
+  opacity: 1;
+}
